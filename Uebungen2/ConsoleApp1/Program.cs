@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -11,123 +12,117 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-        //Seite 2 Aufgabe: 1
-
-            Console.WriteLine("Bitte gebe ein wie oft du die vorherige summe mit einer immer steigenden zahl addieren möchtest.");
-
-            int i = Convert.ToInt32(Console.ReadLine());
-
-            int sum = 0;
-
-            for (int j = 0; j < i; j++)
-            {
-                sum = j + sum;
-                Console.WriteLine(sum);
-            }
-            Console.ReadKey();
-
-        //Seite 2 Aufgabe 2
-
-            Console.Clear();
-
-            Console.WriteLine("Bitte gib eine Zahl ein von der du rückwärts bis 0 zählen willst.");
-
-            int num1 = Convert.ToInt32(Console.ReadLine());
-
-            for (int j = 0; j < num1; num1--)
-            {
-                Console.WriteLine(num1);
-            }
-
-            Console.ReadKey();
-
-        //Seite 2 Aufgabe 3
-
-            Console.Clear();
-
-            string[] names = { "Jonas", "Phillip", "Niklas", "Marcello", "Andreas", "Robin", "Robert", "Marie", "Leon", "Erwin", "Jan", "Mona", "Lukas", "Johannes" };
-            int l = names.Length;
-
-            Console.WriteLine("Nach welchem Buchstaben willst du in der Liste suchen?");
-            string k = Console.ReadLine();
-
-            for (int j = 0; j < l; j++)
-            {
-                if (names[j].Contains(k))
-                {
-                    Console.WriteLine(names[j]);
-                }
-            }
-
-            Console.ReadKey();
-
-        //Seite 2 Aufgabe 4
-
-            Console.Clear ();
-
-            Console.WriteLine("Wie viele plätze soll die Liste haben?");
-
-            int q = Convert.ToInt32(Console.ReadLine());
-
-            int[] array = new int[q];
-
-            for (int w = 0; w < q; w++)
-            {
-                Console.WriteLine($"Bitte gib die {w + 1}. Zahl ein");
-                array[w] = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-            }
-
-            Console.WriteLine("Deine Liste enthält nun diese Zahlen:");
-            foreach (int a in array)
-            {
-                Console.WriteLine(a);
-            }
-
-            Console.ReadKey();
-
-        //Seite 2 Aufgabe 4b
-            /*
-            int min = array.Min();
-            int max = array.Max();
-            double avg = array.Average();
-            */
-            Console.WriteLine($"Der kleinste wert in der Liste ist {array.Min()}, der höchste Wert ist {array.Max()} und der Durchschnitt ist {array.Average()}.");
-
-            Console.ReadKey();
-
-            //Seite 2 Aufgabe 5
-
-            int ö = 1;
-
+            //Seite 3 Aufgabe 1
             do
             {
-                if ((ö % 3 == 0) && (ö % 5 == 0))
+                Console.Clear();
+
+                Console.WriteLine("Wie ist dein Name?");
+                string name = Console.ReadLine();
+
+                if (name == " ")
                 {
-                    Console.WriteLine("FIZZBUZZ");
+                    Console.WriteLine("Hast du keinen Namen?");
+                    return;
+                }
+                else if (name != " ")
+                {
+                    Console.WriteLine("Willst du das als deinen Namen festlegen?(y/n)");
+                    string auswahl = Console.ReadLine();
+
+                    if (auswahl == "y")
+                    {
+                        string[] splitted = name.Split('a');
+
+                        Console.WriteLine($"Dein Name hat {splitted.Length - 1} a's.");
+
+                        Console.WriteLine("Gib mir bitte 2 Zahlen nacheinander");
+                        int num1 = Convert.ToInt32(Console.ReadLine());
+                        int num2 = Convert.ToInt32(Console.ReadLine());
+
+                        if (num1 < num2)
+                        {
+                            Console.WriteLine($"Von deinen Ausgewählten Zahlen ist die {num2} Größer.");
+                            break;
+                        }
+                        else if (num1 == num2)
+                        {
+                            Console.WriteLine("Deine Ausgewählten Zahlen sind gleich groß");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Von deinen Ausgewählten Zahlen ist die {num1} Größer.");
+                            break;
+                        }
+                    }
                 }
 
-                else if (ö % 3 == 0)
-                {
-                    Console.WriteLine("FIZZ");
-                }
+                Console.ReadKey();
 
-                else if (ö % 5 == 0)
-                {
-                    Console.WriteLine("BUZZ");
-                }
+            } while (true);
+            
+            Console.ReadKey();
 
-                else
-                {
-                    Console.WriteLine(ö);
-                }
+            //Seite 3 Aufgabe 2
 
-                ö++;
+            Console.WriteLine("Bitte gib eine Anzahl von sekunde an, ich werde diese dann in (d,h,m,s) umwandeln.");
 
-            } while (ö < 101);
+            int seconds = Convert.ToInt32(Console.ReadLine());
 
+            int minutes = seconds / 60;
+            int a_seconds = seconds % 60;
+
+            int hours = minutes / 60;
+            int a_minutes = minutes % 60;
+
+            int days = hours / 60;
+            int a_hours = hours % 60;
+                        
+            int a_days = days % 60;
+
+            Console.WriteLine($"Umgewandelt sind es {a_days} Tage, {a_hours} Stunden, {a_minutes} Minuten und {a_seconds} Sekunden.");
 
             Console.ReadKey();
+
+            //Seite 3 Aufgabe 3
+
+            string text1 = "MissiSsiPpi";
+
+            int m = 0;
+            int i = 0;
+            int s = 0;
+            int p = 0;
+            
+            foreach (char c in text1.ToLower())
+            {
+                if (c == 'm')
+                {
+                    m++;
+                }
+
+                else if (c == 'i')
+                {
+                    i++;
+                }
+
+                else if (c == 's')
+                {
+                    s++;
+                }
+
+                else if (c == 'p')
+                {
+                    p++;
+                }
+            }
+
+            Console.WriteLine($"Das Wort Mississippi hat {m} m's, {i} i's, {s} s's und {p} p's.");
+
+            Console.ReadKey();
+
+            
+
         }
     }
 }
