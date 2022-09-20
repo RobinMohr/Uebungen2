@@ -10,71 +10,56 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-         //Seite 1 Aufgabe 1
+        //Seite 1 Aufgabe 5
 
-            Console.WriteLine(2 + 5);
-
-            Console.ReadKey();
-
-         //Seite 1 Aufgabe 2
-
-            Console.Clear();
-
-            Console.WriteLine("Bitte gib mir zwei Zahlen nacheinander aus.");
-
-            int num1 = Int32.Parse(Console.ReadLine());
-            int num2 = Int32.Parse(Console.ReadLine());
-
-            int sum1 = num1 + num2;
-
-            Console.WriteLine(num1 + " + " + num2 + " = " + sum1);
-
-            Console.ReadKey();
-
-         //Seite 1 Aufgabe 3
-
-            Console.Clear();
-
-            Console.WriteLine("Bitte gib mir einen ganzen Text aus.");
-
-            string text = Console.ReadLine();
-
-            
-
-            Console.WriteLine(text.Replace("u", "g").Replace("U", "G"));
-
-            Console.ReadKey();
-
-         //Seite 1 Aufgabe 4
-
-            Console.Clear();
-
-            Console.WriteLine("Bitte gib mir einen Text.");
+            Console.WriteLine("Bitte gib mir mal wieder einen Text.");
 
             string text1 = Console.ReadLine();
 
-            string[] entry = text1.Split(' ');
-
-            int length = entry.Length;
-
-            Console.WriteLine("Dein Text Hatte " + length + " Wörter.");
+            Console.WriteLine(text1.PadLeft(20, 'y'));
 
             Console.ReadKey();
 
-            //Seite 1 Aufgabe 2b
+         //Seite 1 Aufgabe 6
 
             Console.Clear();
 
-            Console.WriteLine("Bitte gib mir zwei Zahlen nacheinander aus.");
+            Console.WriteLine("Bitte gib mir mal wieder einen Text.");
 
-            float num3 = float.Parse(Console.ReadLine());
-            float num4 = float.Parse(Console.ReadLine());
+            string text2 = Console.ReadLine();
 
-            float sum2 = num3 + num4;
-
-            Console.WriteLine(num3 + " + " + num4 + " = " + sum2);
+            Console.WriteLine(text2.PadRight(30, 'y'));
 
             Console.ReadKey();
+
+         //Seite 1 Aufgabe 7
+
+            Console.Clear();
+
+            Console.WriteLine("Bitte gib mir einen Text bei dem davor und danach leerzeichen sind.");
+
+            string text3 = Console.ReadLine();
+
+            Console.WriteLine(text3.Trim(' '));
+
+        //Seite 1 Aufgabe 8
+
+            Console.Clear();
+
+            Console.WriteLine("Bitte gib mir einen Text mit Semicolons.");
+
+            string text4 = Console.ReadLine();
+
+            string[] strings = text4.Split(';');
+
+            foreach (string s in strings)
+            {
+                Console.WriteLine(s);
+            }
+
+
+
+
 
 
 
